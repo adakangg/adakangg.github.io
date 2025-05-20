@@ -99,8 +99,8 @@ const techStack = [
         skills: [
             "Javascript",
             "Typescript",
-            "HTML",
             "Java",
+            "HTML",
             "CSS",
             "SQL",
             "Python"
@@ -112,7 +112,7 @@ const techStack = [
             "React",
             "Next.js",
             "Node.js",
-            "Express.js",
+            "Express",
             "SQLite",
             "Tailwind",
             "TanStack Query" 
@@ -140,17 +140,7 @@ function setTheme() {
     const toggleBtn = document.getElementById('theme-toggle');
     const moon = document.getElementById("switch-dark-img")
     const sun = document.getElementById("switch-light-img")
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        setThemeFeatures(savedTheme, toggleBtn, sun, moon) 
-    } else { 
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const preferredTheme = prefersDark ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', preferredTheme);
-        setThemeFeatures(preferredTheme, toggleBtn, sun, moon) 
-    } 
+    setThemeFeatures("light", toggleBtn, sun, moon) 
     
     toggleBtn.addEventListener("change", (event) => {
         if (event.target.checked) {
