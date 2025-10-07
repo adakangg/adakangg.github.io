@@ -1,0 +1,48 @@
+@import "tailwindcss"; 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+:root {  
+  font-family: 'Rubik', sans-serif; 
+  line-height: 1.5;
+  font-weight: 400; 
+  color-scheme: light dark;  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background: #ffffff;  
+  --muted-background: #fcfcfc; 
+  --dark-background: #101318;
+  --dark-muted-background: #171b24;
+  --foreground: #1b1a1a; 
+  --muted-foreground: #1f1d1d;   
+  --muted-border: #eeeded;
+  --primary: #E68600;  
+}   
+
+.dark {
+  --background: var(--dark-background);
+  --muted-background: var(--dark-muted-background);
+  --foreground: #e8ecf1; 
+  --muted-foreground: #cad2dd;  
+  --muted-border: #1c212b;
+  --primary: #f3c063;   
+} 
+
+
+html, body, #root {
+  min-height: 100%; 
+  width: 100%;   
+}
+
+@layer utilities {  
+  .sidebar-title  { @apply text-xl font-bold border-b-2 } 
+  .chip { @apply w-fit text-[0.88rem] px-3 py-1 rounded-sm } 
+}
+ 
+ #root {
+  background: var(--background);
+  color: var(--foreground); 
+}
